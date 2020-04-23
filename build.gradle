@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'me.nahu'
+version '0.1.0'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.twilio.sdk:twilio:7.49.1'
+    implementation 'me.nahu:launchlibrary:1.1.2'
+    implementation 'com.sparkjava:spark-core:2.8.0'
+}
+
+jar.manifest.attributes(
+        'Main-Class': "$group.${rootProject.name}.Main"
+)
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = sourceCompatibility
