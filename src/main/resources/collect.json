@@ -12,10 +12,10 @@
               "on_failure":{
                 "messages":[
                   {
-                    "say": "We do not accept this format. Please send image of insurance card"
+                    "say": "Please enter a valid type!"
                   },
                   {
-                    "say": "Lets try one more time to get the insurance card picture."
+                    "say": "Lets try one more time to get a valid type."
                   }
                 ],
                 "repeat_question": true
