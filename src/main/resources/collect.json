@@ -1,0 +1,42 @@
+{
+  "actions": [
+    {
+      "collect": {
+        "name": "collect_type",
+        "questions": [
+          {
+            "question": "What type of query would you like to make?",
+            "name": "action_type",
+            "type": "type",
+            "validate": {
+              "on_failure":{
+                "messages":[
+                  {
+                    "say": "We do not accept this format. Please send image of insurance card"
+                  },
+                  {
+                    "say": "Lets try one more time to get the insurance card picture."
+                  }
+                ],
+                "repeat_question": true
+              },
+              "max_attempts":{
+                "redirect": "task://goodbye",
+                "num_attempts": 4
+              },
+              "on_success": {
+                "say": "We are processing your request!"
+              }
+            }
+          }
+        ],
+        "on_complete": {
+          "redirect": {
+            "method": "POST",
+            "uri": "https://server.nahu.me/collect"
+          }
+        }
+      }
+    }
+  ]
+}
