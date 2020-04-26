@@ -11,17 +11,12 @@ public class RocketResponse extends Response {
     }
 
     @Override
-    public String getPath() {
-        return "/rocket";
-    }
-
-    @Override
     public String getName() {
         return "rocket";
     }
 
     @Override
-    public String createMessage(JsonObject object) throws Throwable {
+    public String createMessage(JsonObject object) {
         String rocketName = parseAnswer(object, "rocket-name");
         RocketQuery.Rocket rocket = first(sync(getLaunchLibrary().getRocketsFromName(rocketName)).getRockets());
         return String.format("%s: Of family %s. For more info check %s", rocket.getName(), rocket.getFamily().getName(), rocket.getWikiUrl());

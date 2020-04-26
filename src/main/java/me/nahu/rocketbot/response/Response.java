@@ -13,11 +13,9 @@ public abstract class Response {
         this.launchLibrary = launchLibrary;
     }
 
-    public abstract String getPath();
-
     public abstract String getName();
 
-    public abstract String createMessage(JsonObject object) throws Throwable;
+    public abstract String createMessage(JsonObject object);
 
     protected String parseAnswer(JsonObject object, String nodeName) {
         return object.getAsJsonObject(nodeName)

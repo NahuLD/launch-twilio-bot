@@ -11,17 +11,12 @@ public class LaunchResponse extends Response {
     }
 
     @Override
-    public String getPath() {
-        return "/launch";
-    }
-
-    @Override
     public String getName() {
         return "launch";
     }
 
     @Override
-    public String createMessage(JsonObject object) throws Throwable {
+    public String createMessage(JsonObject object) {
         LaunchQuery.Launch launch = first(sync(getLaunchLibrary().getNextLaunches(1)).getLaunches());
         return String.format("Next launch is scheduled for %s, by agency %s using rocket %s",
                 launch.getWindowStart().toString(),

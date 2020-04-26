@@ -13,17 +13,12 @@ public class MissionResponse extends Response {
     }
 
     @Override
-    public String getPath() {
-        return "/mission";
-    }
-
-    @Override
     public String getName() {
         return "mission";
     }
 
     @Override
-    public String createMessage(JsonObject object) throws Throwable {
+    public String createMessage(JsonObject object) {
         String missionName = parseAnswer(object, "mission-name");
         List<MissionQuery.Mission> missions = sync(getLaunchLibrary().getMissionsByName(missionName)).getMissions();
 
