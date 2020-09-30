@@ -12,12 +12,12 @@ relaying information via a Twilio Autopilot bot.
 ###### With dependencies
 
 1. Run ./gradlew shadowJar in project's root.
-2. The file is located in build/libs.
+2. The file located in build/libs.
 
 ###### Without dependencies
 
-1. Run ./gradlew build in project's root.
-2. The file is located in build/libs.
+1. Run `./gradlew build` in project's root.
+2. The file located in `build/libs`.
 
 ### Code Guidelines
 [Google's Java style guide](https://google.github.io/styleguide/javaguide.html) 
